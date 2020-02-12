@@ -8,19 +8,22 @@ public class MainBanco {
         ContaCorrente contaC = new ContaCorrente(banco1,cliente1,1,0);
 
 
-        conta1.saldoP();
+        /// Conta Poupança
+        conta1.saldo();
         conta1.depositarC(100);
-        conta1.sacarC(300);
+        conta1.saqueJuros();
+        conta1.sacarC(110);
+        conta1.saldo();
 
-        contaC.depositarC(100);
-        contaC.saqueJuros();
-        contaC.sacarC(10);
-        contaC.getSaldoConta();
-        contaC.depositarCheque(100,"banco1", 101010);
-        contaC.depositarCheque(100,"banco1", 101010);
-        contaC.depositarCheque(100,"banco1", 101010);
-        contaC.getSaldoConta();
-        contaC.sacarC(500);
+        /// Conta Corrente
+        contaC.saldo();
+        contaC.depositarC(300);
+        contaC.saldo();
+        contaC.depositarCheque(400,"banco1",90);
+        contaC.saldo();
+        contaC.sacarC(900);
+        contaC.saldo();
+
 
     }
 }

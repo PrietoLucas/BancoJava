@@ -5,6 +5,9 @@ public class Conta {
     private Cliente cliente;
     private int codConta;
     private double saldoConta;
+    private double juros;
+
+    private double taxaJuros = 0.15;
 
     public Conta(Banco banco, Cliente cliente, int codConta, double saldoConta) {
         this.banco = banco;
@@ -49,7 +52,6 @@ public class Conta {
         if(valor > 0){
             this.saldoConta += valor;
             System.out.println(valor+ " Depositados em sua conta");
-            System.out.println("Total da Conta: " +saldoConta);
         } else {
             System.out.println("Valor Invalido!");
         }
@@ -59,13 +61,23 @@ public class Conta {
         if (saldoConta >= valor) {
             this.saldoConta -= valor;
             System.out.println(valor +" Sacados de sua conta!");
-            System.out.println("Total da Conta: " +saldoConta);
         } else {
             System.out.println("Sem limite para saques!");
         }
     }
 
-    public void saldoP(){
-        System.out.println("Saldo atual da Conta "+getSaldoConta());
+    public void saldo(){
+        System.out.println("Saldo Total da Conta: "+getSaldoConta());
+    }
+
+    public void saqueJuros(){
+        if(this.getSaldoConta()> 0){
+            juros = getSaldoConta()*taxaJuros;
+            System.out.println("Juros Acumulado: "+juros);
+            setSaldoConta(getSaldoConta()+juros);
+            System.out.println("Total com Juros: " +getSaldoConta());
+        } else {
+            System.out.println("Não há valores para saque.");
+        }
     }
 }

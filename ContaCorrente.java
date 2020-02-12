@@ -27,11 +27,9 @@ public class ContaCorrente extends Conta {
         if (this.getSaldoConta() > valor) {
             this.setSaldoConta(getSaldoConta()-valor) ;
             System.out.println(valor +" Sacados de sua conta!");
-            System.out.println("Total geral após a transação: " +getSaldoConta());
         } else if (this.getSaldoConta() < valor){
             this.setSaldoConta(getSaldoConta()-valor) ;
             System.out.println(valor+ " Sacados do limite especial!");
-            System.out.println("Total geral após a transação: " +getSaldoConta());
         }
     }
 
@@ -49,7 +47,6 @@ public class ContaCorrente extends Conta {
     public void depositarCheque(double valor, String banco, double data){
         System.out.println("Cheque no valor de R$"+valor+" reais depositado");
         this.setSaldoConta(getSaldoConta()+valor);
-        System.out.println("Saldo atual da conta: " +getSaldoConta());
     }
 
 
