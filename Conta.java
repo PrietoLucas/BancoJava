@@ -64,4 +64,8 @@ public class Conta {
             System.out.println("Sem limite para saques!");
         }
     }
+
+    public void saldoP(){
+        System.out.println("Saldo atual da Conta "+getSaldoConta());
+    }
 }
