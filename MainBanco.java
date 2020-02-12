@@ -8,12 +8,12 @@ public class MainBanco {
         ContaCorrente contaC = new ContaCorrente(banco1,cliente1,1,0);
 
 
-        /// Conta Poupança
+        /*/// Conta Poupança
         conta1.saldo();
         conta1.depositarC(100);
         conta1.saqueJuros();
         conta1.sacarC(110);
-        conta1.saldo();
+        conta1.saldo();*/
 
         /// Conta Corrente
         contaC.saldo();
@@ -21,9 +21,11 @@ public class MainBanco {
         contaC.saldo();
         contaC.depositarCheque(400,"banco1",90);
         contaC.saldo();
-        contaC.sacarC(900);
+        contaC.sacarC(990);
         contaC.saldo();
-
+        contaC.depositarCheque(0,"banco1",90);
+        contaC.sacarC(990);
+        contaC.saldo();
 
     }
 }
